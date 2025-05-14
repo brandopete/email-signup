@@ -4,4 +4,5 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.get("/", (req, res) => res.json({ message: "Backend ready" }));
-app.listen(3000, () => console.log("Server on http://localhost:3000"));
+const PORT = process.env.PORT || 3000; // Use AWS-assigned port or default to 3000
+app.listen(PORT, () => console.log(`Server on http://localhost:${PORT}`));
